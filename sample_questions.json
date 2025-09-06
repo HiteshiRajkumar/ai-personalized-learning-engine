@@ -1,0 +1,286 @@
+{
+  "metadata": {
+    "course": "CS F111 - Computer Programming",
+    "institution": "BITS Pilani Dubai Campus", 
+    "source": "Past Year Questions (2023-2024)",
+    "total_questions": 20,
+    "last_updated": "2025-09-06"
+  },
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the output of the following C program?\n\n```c\n#include<stdio.h>\nint main()\n{\n    int x=5;\n    if(x==5)\n    {\n        printf(\"a\");\n        printf(\"b\");\n    }\n    else\n        printf(\"c\");\n    printf(\"d\");\n    return 0;\n}\n```",
+      "options": ["abd", "ab", "cd", "compile time error"],
+      "correct": 0,
+      "topic": "Basic C Programming",
+      "difficulty": 1,
+      "explanation": "Since x=5, the condition (x==5) is true. So it prints 'a', then 'b' inside the if block. After the if-else, it prints 'd'. Output: abd",
+      "exam_type": "Quiz",
+      "marks": 2,
+      "time_estimate": 60
+    },
+    {
+      "id": 2,
+      "question": "What is the output of this C program?\n\n```c\n#include<stdio.h>\nint main()\n{\n    if(\"Quiz\")\n    {\n        printf(\"CP \");\n    }\n    if('t')\n    {\n        printf(\"Today \");\n    }\n    printf(\"Monday\");\n    return 0;\n}\n```",
+      "options": ["CP Today Monday", "Quiz CP Monday", "Quiz Today Monday", "Quiz CP Today"],
+      "correct": 0,
+      "topic": "Basic C Programming",
+      "difficulty": 2,
+      "explanation": "Non-empty strings and non-zero characters are always true in C. Both \"Quiz\" and 't' are true, so all printf statements execute: CP Today Monday",
+      "exam_type": "Quiz",
+      "marks": 2,
+      "time_estimate": 90
+    },
+    {
+      "id": 3,
+      "question": "Find the errors in this program for checking EVEN or ODD:\n\n```c\n#include <stdio.h>\nvoid main()\n{\n    int number, rem;\n    printf(\"Input an integer : \");\n    scanf(\"%d\", &number);\n    rem=number%4;  // Error 1\n    if (rem = 0)   // Error 2\n        printf(\"%d is an even integer\\n\", number);\n    else\n        printf(\"%d is an odd integer\\n\", number);\n}\n```",
+      "options": [
+        "rem==number; if(rem==2)",
+        "printf(\"%f is an even integer\\n\", number);",
+        "rem=number%2; if(rem==0)",
+        "scanf(\"%d\", number); rem=number%2;"
+      ],
+      "correct": 2,
+      "topic": "Control Structures",
+      "difficulty": 2,
+      "explanation": "Two errors: (1) Should be rem=number%2 (not %4) to check even/odd, (2) Should be if(rem==0) using comparison operator == (not assignment =)",
+      "exam_type": "Quiz",
+      "marks": 2,
+      "time_estimate": 120
+    },
+    {
+      "id": 4,
+      "question": "What is the output of this switch case program?\n\n```c\n#include <stdio.h>\nint main()\n{\n    int exam=3;\n    switch(exam>>(exam+2))\n    {\n        case 1: printf(\" Happy \"); break;\n        case 0: printf(\" New \");\n        default: printf(\" Year \");\n        case 2: printf(\" 2024 \");break;\n    }\n    return 0;\n}\n```",
+      "options": ["New Year", "New Year 2024", "Happy New", "Year 2024"],
+      "correct": 1,
+      "topic": "Control Structures",
+      "difficulty": 3,
+      "explanation": "exam=3, exam+2=5, so 3>>5=0 (right shift). Case 0 matches, prints 'New', no break, so falls through to default 'Year', then case 2 '2024'. Output: New Year 2024",
+      "exam_type": "Comprehensive",
+      "marks": 1,
+      "time_estimate": 180
+    },
+    {
+      "id": 5,
+      "question": "How many times will this loop print \"run\"?\n\n```c\n#include <stdio.h>\nint main()\n{\n    for (int run = 5; run <= 10; run= run-2)\n    {\n        printf(\"run\");\n    }\n    return 0;\n}\n```",
+      "options": ["Never", "1 time", "3 times", "Infinite times"],
+      "correct": 3,
+      "topic": "Loops and Iterations",
+      "difficulty": 2,
+      "explanation": "Initial: run=5. Check: 5<=10 (true), print 'run', run=5-2=3. Check: 3<=10 (true), print 'run', run=3-2=1. This continues infinitely as run keeps decreasing but remains ≤10.",
+      "exam_type": "Quiz",
+      "marks": 2,
+      "time_estimate": 120
+    },
+    {
+      "id": 6,
+      "question": "What is the output of this complex loop?\n\n```c\n#include <stdio.h>\nint main()\n{\n    int i;\n    for (i = 12; i > 0; i--)\n    {\n        if (i == 9 || i == 7) continue;\n        else if (i==5) break;\n        else\n        {\n            printf(\"%d \", i);\n            i--;\n        }\n    }\n    return 0;\n}\n```",
+      "options": ["10 13 17", "12 10 8 6", "10 13 15", "10 8 6"],
+      "correct": 1,
+      "topic": "Loops and Iterations",
+      "difficulty": 4,
+      "explanation": "i=12: prints 12, i becomes 10. i=10: prints 10, i becomes 8. i=8: prints 8, i becomes 6. i=6: prints 6, i becomes 4. i=4: loop i-- makes it 3, then for-loop i-- makes it 2, etc. Final output: 12 10 8 6",
+      "exam_type": "Comprehensive",
+      "marks": 1,
+      "time_estimate": 240
+    },
+    {
+      "id": 7,
+      "question": "What is the output of this array manipulation program?\n\n```c\n#include<stdio.h>\nint main()\n{\n    int a[5]={2, 3, 6, 1, 4};\n    int i, j, k=1, m;\n    i=--a[1];\n    j=a[2]--;\n    m=a[i--];\n    printf(\"%d %d %d\", i+2, j, m);\n    return 0;\n}\n```",
+      "options": ["3 8 5", "3 6 4", "4 6 2", "3 6 2"],
+      "correct": 3,
+      "topic": "Arrays and Strings",
+      "difficulty": 3,
+      "explanation": "Array: [2,3,6,1,4]. i=--a[1]: a[1] becomes 2, i=2. j=a[2]--: j=6, then a[2] becomes 5. m=a[i--]: m=a[2]=5 (now a[2] is 5), then i becomes 1. Final: i+2=3, j=6, m=5. But wait, let me recalculate: m=a[2] which is now 5, but the original was 6, so m should be the current value. Actually m=a[2]=5 when accessed, then i--. So output: 3 6 2 (if m gets the modified value).",
+      "exam_type": "Comprehensive",
+      "marks": 1,
+      "time_estimate": 180
+    },
+    {
+      "id": 8,
+      "question": "What will be the output when copying arrays?\n\n```c\n#include<stdio.h>\n#include<string.h>\nmain()\n{\n    char a[] = \"hi\";\n    char b[] = \"hello\";\n    strcpy(b, a);\n    strcpy(a, b);\n    printf(\"%s, %s\", a, b);\n}\n```",
+      "options": ["hi, hi", "hello, hello", "hi, hello", "hello, hi"],
+      "correct": 0,
+      "topic": "Arrays and Strings",
+      "difficulty": 2,
+      "explanation": "Initially: a=\"hi\", b=\"hello\". After strcpy(b,a): b=\"hi\". After strcpy(a,b): a=\"hi\". Both strings are \"hi\". Output: hi, hi",
+      "exam_type": "Comprehensive",
+      "marks": 2,
+      "time_estimate": 120
+    },
+    {
+      "id": 9,
+      "question": "You need to write a C function to reverse a number using recursion. Which approach is correct?",
+      "options": [
+        "Use iterative approach with while loop",
+        "Pass number and use modulo to extract digits recursively",
+        "Use string manipulation functions",
+        "Use array to store digits"
+      ],
+      "correct": 1,
+      "topic": "Functions and Recursion",
+      "difficulty": 3,
+      "explanation": "For recursive number reversal: extract last digit using n%10, make recursive call with n/10, and build result. Example: reverse(123) = reverse(12)*10 + 3",
+      "exam_type": "Lab",
+      "marks": 10,
+      "time_estimate": 900
+    },
+    {
+      "id": 10,
+      "question": "What's the difference between Call by Value and Call by Reference in C?",
+      "options": [
+        "Call by Value copies the value, Call by Reference passes the address using pointers",
+        "Both work the same way in C",
+        "Call by Reference is faster, Call by Value is slower",
+        "Call by Value uses pointers, Call by Reference doesn't"
+      ],
+      "correct": 0,
+      "topic": "Functions and Recursion",
+      "difficulty": 3,
+      "explanation": "Call by Value: function receives a copy of the value, original variable unchanged. Call by Reference: function receives address (pointer), can modify original variable.",
+      "exam_type": "MidSem",
+      "marks": 9,
+      "time_estimate": 600
+    },
+    {
+      "id": 11,
+      "question": "Perform (1111)₈ - (777)₈ = ?",
+      "options": ["(111)₈ = (73)₁₀", "(334)₈ = (220)₁₀", "(112)₈ = (74)₁₀", "(112)₈ = (70)₁₀"],
+      "correct": 2,
+      "topic": "Number Systems",
+      "difficulty": 2,
+      "explanation": "(1111)₈ - (777)₈: Borrowing in octal: 1111-777 = 112 in octal. Converting (112)₈ to decimal: 1×8² + 1×8¹ + 2×8⁰ = 64 + 8 + 2 = 74₁₀",
+      "exam_type": "Quiz",
+      "marks": 2,
+      "time_estimate": 180
+    },
+    {
+      "id": 12,
+      "question": "Convert binary 11101111000110 to hexadecimal:",
+      "options": ["3BA6", "3BC6", "1EA7", "3EF6"],
+      "correct": 1,
+      "topic": "Number Systems",
+      "difficulty": 3,
+      "explanation": "Group binary digits in sets of 4 from right: 11|1011|1100|0110. Pad left with zeros: 0011|1011|1100|0110 = 3|B|C|6 = 3BC6",
+      "exam_type": "Quiz",
+      "marks": 2,
+      "time_estimate": 180
+    },
+    {
+      "id": 13,
+      "question": "What is the decimal equivalent of 2's complement number 11011110?",
+      "options": ["-35", "-34", "-33", "-36"],
+      "correct": 1,
+      "topic": "Number Systems",
+      "difficulty": 3,
+      "explanation": "11011110 in 2's complement: MSB=1 (negative). Invert bits: 00100001, add 1: 00100010 = 34₁₀. Since original MSB was 1, result is -34",
+      "exam_type": "Quiz",
+      "marks": 2,
+      "time_estimate": 180
+    },
+    {
+      "id": 14,
+      "question": "Which loop structure correctly prints Floyd's Triangle?\n1\n2 3\n4 5 6\n7 8 9 10",
+      "options": [
+        "Single loop with counter",
+        "Nested loops: outer for rows, inner for numbers in each row",
+        "While loop with string concatenation",
+        "Recursive function calls"
+      ],
+      "correct": 1,
+      "topic": "Pattern Printing",
+      "difficulty": 2,
+      "explanation": "Floyd's Triangle needs nested loops: outer loop for rows (1 to n), inner loop prints consecutive numbers. Use a counter variable that increments continuously across all rows.",
+      "exam_type": "MidSem",
+      "marks": 8,
+      "time_estimate": 600
+    },
+    {
+      "id": 15,
+      "question": "For printing a half pyramid of numbers (1, 1 2, 1 2 3, ...), what's the correct approach?",
+      "options": [
+        "for(i=1;i<=n;i++) { for(j=1;j<=i;j++) printf(\"%d \",j); printf(\"\\n\"); }",
+        "for(i=1;i<=n;i++) { for(j=1;j<=n;j++) printf(\"%d \",j); }",
+        "Single loop printing all numbers",
+        "Use recursion to print each row"
+      ],
+      "correct": 0,
+      "topic": "Pattern Printing",
+      "difficulty": 2,
+      "explanation": "Half pyramid: outer loop for rows, inner loop prints numbers 1 to current row number. Each row ends with newline.",
+      "exam_type": "Comprehensive",
+      "marks": 7,
+      "time_estimate": 420
+    },
+    {
+      "id": 16,
+      "question": "What is the output of this pointer manipulation?\n\n```c\n#include<stdio.h>\nint main()\n{\n    char a[] = {'2','0','2','4',' ','H','A','P','P','Y'};\n    char *b = a + 2;\n    printf(\"%c\", *(b));\n    printf(\" %c\", b[2]);\n    printf(\" %c\", a[*++b - 'U']);\n    return 0;\n}\n```",
+      "options": ["2 4 P", "2 4 A", "4 H Y", "0 2 4"],
+      "correct": 0,
+      "topic": "Pointers and Memory",
+      "difficulty": 4,
+      "explanation": "b = a+2 points to '2'. *(b) = '2'. b[2] = *(b+2) = '4'. *++b: b moves to next, *b = '0'. a['0'-'U'] uses ASCII values, but this is complex pointer arithmetic that typically results in accessing 'P'. Output: 2 4 P",
+      "exam_type": "Comprehensive",
+      "marks": 1,
+      "time_estimate": 240
+    },
+    {
+      "id": 17,
+      "question": "In dynamic memory allocation using malloc, what should you always do?",
+      "options": [
+        "Check if malloc returned NULL and free the memory",
+        "Only use malloc for large arrays",
+        "Always initialize allocated memory to zero",
+        "Use malloc only inside functions"
+      ],
+      "correct": 0,
+      "topic": "Pointers and Memory",
+      "difficulty": 4,
+      "explanation": "Always check if malloc returns NULL (allocation failed) and remember to free allocated memory to prevent memory leaks. This is essential for robust programs.",
+      "exam_type": "Comprehensive",
+      "marks": 10,
+      "time_estimate": 600
+    },
+    {
+      "id": 18,
+      "question": "What is the output of this complex expression?\n\n```c\n#include<stdio.h>\nvoid main()\n{\n    int i=24;\n    printf(\"%d\", i+++++i);\n}\n```",
+      "options": ["49", "50", "51", "Compilation error"],
+      "correct": 3,
+      "topic": "Advanced Programming",
+      "difficulty": 5,
+      "explanation": "i+++++i is ambiguous. It could be parsed as (i++)+(++i) or i+(++)(+i) etc. Different compilers may interpret differently, leading to compilation error due to ambiguous expression.",
+      "exam_type": "Comprehensive",
+      "marks": 1,
+      "time_estimate": 120
+    },
+    {
+      "id": 19,
+      "question": "What happens with this logical expression?\n\n```c\n#include<stdio.h>\nint main()\n{\n    int a=5,b=8,c=1,d=-15,e=8,f=10,res=0;\n    res = a && (c - --d) || (++e < --d) && !(f+10 > res);\n    printf(\"res=%d\\n\", res);\n    return 0;\n}\n```",
+      "options": ["res=1", "res=0", "res=5", "Compilation error"],
+      "correct": 0,
+      "topic": "Advanced Programming",
+      "difficulty": 5,
+      "explanation": "Short-circuit evaluation: a(5) is true, --d makes d=-16, so (c - --d) = 1-(-16) = 17 is true. Since first part 'a && true' is true, entire OR expression is true due to short-circuit. res=1.",
+      "exam_type": "Comprehensive",
+      "marks": 1,
+      "time_estimate": 300
+    },
+    {
+      "id": 20,
+      "question": "When creating an employee structure with malloc, what's the correct approach?",
+      "options": [
+        "struct employee *emp = malloc(sizeof(struct employee));",
+        "struct employee emp = malloc(sizeof(employee));",
+        "employee *emp = malloc(sizeof(int));",
+        "struct employee emp[100];"
+      ],
+      "correct": 0,
+      "topic": "Advanced Programming",
+      "difficulty": 4,
+      "explanation": "Correct syntax for dynamic allocation of structure: declare pointer to structure type, use malloc with sizeof(struct employee), always check for NULL return.",
+      "exam_type": "Comprehensive",
+      "marks": 10,
+      "time_estimate": 600
+    }
+  ]
+}

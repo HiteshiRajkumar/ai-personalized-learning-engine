@@ -1,0 +1,10 @@
+Flask==2.3.3
+Flask-CORS==4.0.0
+Werkzeug==2.3.7
+
+# Additional dependencies for enhanced functionality
+python-dotenv==1.0.0
+gunicorn==21.2.0
+
+# For development and debugging
+flask-debugtoolbar==0.13.1
